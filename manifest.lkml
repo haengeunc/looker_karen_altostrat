@@ -1,4 +1,4 @@
-project_name: "haengeun_argolis_demo"
+project_name: "haengeun_demo_ci"
 
 #LAMS
 #rule: K1{} # Primary key naming
@@ -10,5 +10,5 @@ constant: city_name {
 }
 
 constant: model_name {
-  value: "thelook_ecommerce_haengeun_us"
+  value: "haengeun_demo_ci"
 }
