@@ -28,11 +28,11 @@ view: products {
     # hidden: yes
     sql: ${TABLE}.distribution_center_id ;;
   }
-  # dimension: name {
-  #   label: "product_name"
-  #   type: string
-  #   sql: ${TABLE}.name ;;
-  # }
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
   dimension: retail_price {
     type: number
     sql: ${TABLE}.retail_price ;;
