@@ -25,6 +25,13 @@ view: distribution_centers {
     type: string
     sql: ${TABLE}.name ;;
   }
+
+  dimension: dist_country {
+    type: string
+    sql: ${TABLE}.country ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [id, name]
