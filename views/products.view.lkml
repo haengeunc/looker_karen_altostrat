@@ -28,10 +28,11 @@ view: products {
     # hidden: yes
     sql: ${TABLE}.distribution_center_id ;;
   }
-  dimension: name {
-    type: string
-    sql: ${TABLE}.name ;;
-  }
+  # dimension: name {
+  #   label: "product_name"
+  #   type: string
+  #   sql: ${TABLE}.name ;;
+  # }
   dimension: retail_price {
     type: number
     sql: ${TABLE}.retail_price ;;
@@ -48,13 +49,13 @@ view: products {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	name,
-	distribution_centers.name,
-	distribution_centers.id,
-	order_items.count,
-	inventory_items.count
-	]
+  id,
+  brand,
+  distribution_centers.name,
+  distribution_centers.id,
+  order_items.count,
+  inventory_items.count
+  ]
   }
 
 }

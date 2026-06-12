@@ -2,16 +2,16 @@ include: "/explores/customer_orders.explore.lkml"
 
 # Queries for quick start analysis
 
-explore: +customer_orders {
-  query: top_products_by_sales {
-    description: "Top 10 products by revenue this year."
-    dimensions: [products.name]
-    measures: [order_items.total_sale_price]
-    filters: [order_items.created_date: "this year"]
-    sorts: [order_items.total_sale_price: desc]
-    limit: 10
-  }
-}
+# explore: +customer_orders {
+#   query: top_products_by_sales {
+#     description: "Top 10 products by revenue this year."
+#     dimensions: [products.name]
+#     measures: [order_items.total_sale_price]
+#     filters: [order_items.created_date: "this year"]
+#     sorts: [order_items.total_sale_price: desc]
+#     limit: 10
+#   }
+# }
 
 explore: +customer_orders {
   query: daily_revenue {
