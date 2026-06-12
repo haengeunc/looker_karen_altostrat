@@ -34,10 +34,10 @@ view: +order_items {
     value_format_name: usd_0
   }
 
-  # measure: first_order {
-  #   type: date
-  #   sql: MIN(${created_date}) ;;
-  # }
+  measure: first_order {
+    type: date
+    sql: MIN(${created_date}) ;;
+  }
 
   measure: latest_order {
     type: date
