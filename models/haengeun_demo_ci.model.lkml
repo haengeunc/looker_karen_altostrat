@@ -1,86 +1,27 @@
+
+# Define the database connection to be used for this model.
 connection: "haengeun_bq"
 
 # include all the views
-include: "/views/**/*.view.lkml"
+include: "/explores/*.lkml"
+include: "/data_tests/*.lkml"
+include: "/dashboards/*.dashboard"
 
-datagroup: haengeun_demo_ci_default_datagroup {
+
+label: "Haengeun E-commerce"
+
+datagroup: thelook_ecommerce_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
-persist_with: haengeun_demo_ci_default_datagroup
-
-explore: products {
-  join: distribution_centers {
-    type: left_outer 
-    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-    relationship: many_to_one
-  }
+datagroup: orders_datagroup {
+  sql_trigger: SELECT max(id) FROM `bigquery-public-data.thelook_ecommerce.orders` ;;
+  max_cache_age: "24 hours"
+  label: "ETL ID added"
+  description: "Triggered when new ID is added to ETL log"
 }
 
-explore: inventory_items {
-  join: products {
-    type: left_outer 
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
 
-  join: distribution_centers {
-    type: left_outer 
-    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-    relationship: many_to_one
-  }
-}
 
-explore: orders {
-  join: users {
-    type: left_outer 
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: order_items {
-  join: users {
-    type: left_outer 
-    sql_on: ${order_items.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-
-  join: inventory_items {
-    type: left_outer 
-    sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
-    relationship: many_to_one
-  }
-
-  join: products {
-    type: left_outer 
-    sql_on: ${order_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-
-  join: orders {
-    type: left_outer 
-    sql_on: ${order_items.order_id} = ${orders.order_id} ;;
-    relationship: many_to_one
-  }
-
-  join: distribution_centers {
-    type: left_outer 
-    sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: events {
-  join: users {
-    type: left_outer 
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: users {}
-
-explore: distribution_centers {}
-
+persist_with: thelook_ecommerce_default_datagroup

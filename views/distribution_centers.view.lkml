@@ -9,10 +9,10 @@ view: distribution_centers {
     type: number
     sql: ${TABLE}.id ;;
   }
-  dimension: distribution_center_geom {
-    type: string
-    sql: ${TABLE}.distribution_center_geom ;;
-  }
+  # dimension: distribution_center_geom {
+  #   type: string
+  #   sql: ${TABLE}.distribution_center_geom ;;
+  # }
   dimension: latitude {
     type: number
     sql: ${TABLE}.latitude ;;
@@ -25,6 +25,8 @@ view: distribution_centers {
     type: string
     sql: ${TABLE}.name ;;
   }
+
+
   measure: count {
     type: count
     drill_fields: [id, name]

@@ -9,7 +9,7 @@
   elements:
   - title: Monthly Total Sale Revenue (YoY)
     name: Monthly Total Sale Revenue (YoY)
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_line
     fields: [order_items.created_month_name, order_items.total_sale_price, order_items.created_year]
@@ -86,7 +86,7 @@
     height: 8
   - title: Total Revenue
     name: Total Revenue
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: single_value
     fields: [order_items.total_sale_price, order_items.created_year]
@@ -127,7 +127,7 @@
     height: 3
   - title: Total Orders
     name: Total Orders
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: single_value
     fields: [order_items.created_year, orders.count]
@@ -169,7 +169,7 @@
     height: 3
   - title: Total Users
     name: Total Users
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: single_value
     fields: [order_items.created_year, users.count]
@@ -217,7 +217,7 @@
     height: 3
   - title: Top 10 Brands
     name: Top 10 Brands
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_column
     fields: [products.brand, order_items.total_sale_price]
@@ -318,7 +318,7 @@
     height: 2
   - title: Top 10 Categories
     name: Top 10 Categories
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_column
     fields: [order_items.total_sale_price, products.category]
@@ -406,7 +406,7 @@
     height: 7
   - title: Top 10 Products
     name: Top 10 Products
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_column
     fields: [order_items.total_sale_price, products.name]
@@ -494,7 +494,7 @@
     height: 7
   - title: Top 10 Countries
     name: Top 10 Countries
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_column
     fields: [order_items.total_sale_price, users.country]
@@ -590,7 +590,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     listens_to_filters: []
     field: order_items.created_month_name
@@ -603,7 +603,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     listens_to_filters: []
     field: users.country
@@ -616,7 +616,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     listens_to_filters: []
     field: products.brand
@@ -629,7 +629,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     listens_to_filters: []
     field: products.category

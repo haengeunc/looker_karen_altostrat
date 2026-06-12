@@ -40,7 +40,7 @@
     height: 7
   - title: Total Orders
     name: Total Orders
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: single_value
     fields: [orders.count]
@@ -63,7 +63,7 @@
     height: 2
   - title: Count of customers
     name: Count of customers
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_column
     fields: [users.country, users.count]
@@ -116,7 +116,7 @@
     height: 9
   - title: Total Customers
     name: Total Customers
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: single_value
     fields: [orders.count, users.count]
@@ -140,7 +140,7 @@
     height: 2
   - title: Order Count Year-on-Year in 2024
     name: Order Count Year-on-Year in 2024
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     type: looker_line
     fields: [orders.order_count_last_year, orders.count, orders.created_month, orders.order_count_last_year_difference]
@@ -220,7 +220,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: thelook_ecommerce_haengeun_us
+    model: haengeun_demo_ci
     explore: customer_orders
     listens_to_filters: []
     field: users.country

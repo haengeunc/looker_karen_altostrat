@@ -78,11 +78,11 @@ view: users {
     sql: ${TABLE}.traffic_source ;;
     group_label: "User Details"
   }
-  dimension: user_geom {
-    type: string
-    sql: ${TABLE}.user_geom ;;
-    group_label: "Location"
-  }
+  # dimension: user_geom {
+  #   type: string
+  #   sql: ${TABLE}.user_geom ;;
+  #   group_label: "Location"
+  # }
   measure: count {
     type: count
     drill_fields: [detail*]
