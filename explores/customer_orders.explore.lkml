@@ -57,7 +57,7 @@ explore: customer_orders {
   }
 }
 
-#-----------------------------------------------------
+#------------------------------------------------------
 
 view: fov_example {
   #field-only view i.e. no sql_table_name argument
